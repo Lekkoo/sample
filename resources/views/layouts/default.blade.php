@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>@yield('title', 'Default value') --- Elegant Laravel</title>
+    <title>@yield('title', 'Sample App') - Laravel 入门教程</title>
+    <link rel="stylesheet" href="/css/app.css">
   </head>
   <body>
-    @yield('content')
-    <!-- 下面的这行代码表示该占位区域将用于显示 content 区块的内容，而 content 区块的内容将由继承自 default 视图的子视图定义 -->
+    @include('layouts._header')
+
+    <div class="container">
+      <div class="col-md-offset-1 col-md-10">
+        @yield('content')
+        @include('layouts._footer')
+      </div>
+    </div>
   </body>
 </html>
