@@ -42,6 +42,7 @@ class UsersController extends Controller
       ]);
 
       session()->flash('success', '操作成功哦～');
+      Auth::login($user);
       return redirect()->route('users.show', [$user]);
       // return redirect()->route('users.show', [$user->id]);
 
